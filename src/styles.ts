@@ -7,4 +7,3 @@ export const Section = styled.section`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 22px;
 `;
-

@@ -20,7 +20,7 @@ export const Logo = styled.h1`
     font-size: 1.25rem;
   }
 `;
-export const Button = styled.button`
+export const Button = styled.div`
   width: 90px;
   height: 45px;
   background-color: #fff;

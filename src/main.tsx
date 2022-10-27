@@ -5,18 +5,31 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 configureStore;
 
-import produtsReducer from "./Store/ProdutsSlice";
+import produtsReducer, { productsFetch } from "./Store/produtsSlice";
+
+import { productsApi } from "./Store/productsApi";
+import cartReduce from "./Store/cartSlice";
 
 
-const store = configureStore({
+const store:any = configureStore({
   reducer: {
     products: produtsReducer,
+    cart:cartReduce,
+    [productsApi.reducerPath]: productsApi.reducer,
   },
+  middleware: (getReducerMiddleware) =>
+    getReducerMiddleware().concat(productsApi.middleware),
 });
+
+
+
+store.dispatch(productsFetch());
+
+console.log(store.dispatch(productsFetch()));
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Provider store = {store} >
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>

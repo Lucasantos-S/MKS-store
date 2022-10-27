@@ -1,4 +1,7 @@
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Store/cartSlice";
 import { Container, Image, Title, Description } from "./styles";
+
 
 interface Product {
   id: number;
@@ -9,6 +12,11 @@ interface Product {
 }
 
 function CreateProdutcs(props: Product) {
+  const dispatch = useDispatch();
+  function handleAddToCart(product: any) {
+    dispatch(addToCart(product));
+  }
+
   return (
     <Container key={props.id}>
       <Image src={props.photo} alt="" />
@@ -17,7 +25,7 @@ function CreateProdutcs(props: Product) {
         <p>{`R$${Number(props.price)}`}</p>
       </Title>
       <Description>{props.description}</Description>
-      <button id={`${props.id}`}>
+      <button onClick={() => handleAddToCart(props)} id={`${props.id}`}>
         <img src="/shopping-bag.png" alt="" />
         COMPRAR
       </button>
