@@ -14,8 +14,9 @@ const initialState: PostStats = {
 };
 export const productsFetch = createAsyncThunk(
   "products/productsFetch",
-  async (id= null, { rejectWithValue }) => {
-   
+  async (id:null, { rejectWithValue }) => {
+    
+    
     try {
       const response = await axios(
         "https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC"
