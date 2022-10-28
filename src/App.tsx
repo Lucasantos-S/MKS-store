@@ -1,6 +1,4 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import axios from "axios";
-import React from "react";
 import "./App.css";
 import Cart from "./components/car/Cart";
 import Header from "./components/Header/Header";
@@ -16,8 +14,10 @@ interface Product {
   price: string;
 }
 
+
+
 function App() {
-  const { data, error, isLoading } = useGetAllProductsQuery():;
+  const { data, error, isLoading } = useGetAllProductsQuery()
 
   return (
     <div>

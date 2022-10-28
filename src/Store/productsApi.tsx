@@ -6,7 +6,7 @@ export const productsApi = createApi({
     baseUrl: "https://mks-frontend-challenge-api.herokuapp.com/api/v1",
   }),
   endpoints: (builder) => ({
-    getAllProducts: builder.query({
+    getAllProducts: builder.query<any,void>({
       query: (id) => "products?page=1&rows=8&sortBy=id&orderBy=ASC",
     }),
     
