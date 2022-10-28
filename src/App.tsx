@@ -14,10 +14,8 @@ interface Product {
   price: string;
 }
 
-
-
 function App() {
-  const { data, error, isLoading } = useGetAllProductsQuery()
+  const { data, error, isLoading } = useGetAllProductsQuery();
 
   return (
     <div>

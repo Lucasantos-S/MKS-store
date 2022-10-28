@@ -1,7 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import "../../App.css";
 import { Contend, Title, Close } from "./style";
-import { Section, ValueCar, Container } from "./styleProduto";
+import { Section, RemoveItem, ValueCar, Container , CartItem} from "./styleProduto";
 
 import { useSelector } from "react-redux";
 
@@ -11,12 +11,13 @@ interface CartItems {
   description: string;
   photo: string;
   price: string;
+  cartQuantity:string;
 }
 
 function Cart() {
   const cart = useSelector((state: any) => state.cart);
   console.log(cart);
-  
+
   return (
     <>
       <Dialog.Portal />
@@ -28,24 +29,27 @@ function Cart() {
             <Close>X</Close>
           </div>
 
-          {cart.cartItems?.map(({ id, name, photo,price }:CartItems ) => {
-            return (
-              <Section key={id}>
-                <img src={photo} alt="" />
-                <h3>{name}</h3>
-                <div>
-                  <button>-</button>
-                  <span></span>
-                  <button>+</button>
-                </div>
-                <p>R${Number(price)}</p>
-              </Section>
-            );
-          })}
+          <CartItem>
+            {cart.cartItems?.map(({ id, name, photo, price, cartQuantity }: CartItems) => {
+              return (
+                <Section key={id}>
+                  <RemoveItem>x</RemoveItem>
+                  <img src={photo} alt="" />
+                  <h3>{name}</h3>
+                  <div>
+                    <button>-</button>
+                    <span>{cartQuantity}</span>
+                    <button>+</button>
+                  </div>
+                  <p>R${Number(price) * Number(cartQuantity)}</p>
+                </Section>
+              );
+            })}
+          </CartItem>
 
           <ValueCar>
             <p>Total:</p>
-            <p>R$798</p>
+            <span>R${cart.cartTotalAmount}</span>
           </ValueCar>
           <button>Finalizar Compra</button>
         </Container>

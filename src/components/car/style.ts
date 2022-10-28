@@ -15,6 +15,7 @@ export const Contend = styled(Dialog.Content, {
   "& div": {
     position: "relative",
   },
+  
 });
 export const Title = styled(Dialog.Title, {
   width: "180px",
