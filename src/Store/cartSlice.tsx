@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface PostStats {
-  cartItems: [];
+  cartItems: [] | string;
   cartTotalQuality: number;
   cartTotalAmount: number;
 }
+
+const storage: any = localStorage.getItem("cartItems");
 const initialState: PostStats = {
-  cartItems: localStorage.getItem("cartItems")
-    ? JSON.parse(localStorage.getItem("cartItems"))
-    : [],
+  cartItems: storage ? JSON.parse(storage) : [],
   cartTotalQuality: 0,
   cartTotalAmount: 0,
 };
@@ -17,9 +17,9 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart(state, action) {
+    addToCart(state:any, action) {
       const itemIndex = state.cartItems.findIndex(
-        (item) => item.id === action.payload.id
+        (item: any) => item.id === action.payload.id
       );
       if (itemIndex >= 0) {
         state.cartItems[itemIndex].cartQuantity += 1;
