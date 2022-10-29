@@ -6,4 +6,13 @@ export const Section = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 22px;
+  position: relative;
+`;
+
+export const Loading = styled.span`
+  background: #000;
+  position: absolute;
+  top: 250px;
+  left: 45%;
+
 `;

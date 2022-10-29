@@ -1,8 +1,14 @@
 // import styled from 'styled-components';
-import { styled } from "@stitches/react";
+import { styled, keyframes } from "@stitches/react";
 import * as Dialog from "@radix-ui/react-dialog";
 
-
+const contentShow = keyframes({
+  "0%": {
+    opacity: 0,
+    transform:
+      "scaleX(.4);transform-origin:100% 100%}100%{transform:scaleX(1);transform-origin:100% 100%",
+  },
+});
 export const Contend = styled(Dialog.Content, {
   position: "fixed",
   width: "500px",
@@ -15,7 +21,9 @@ export const Contend = styled(Dialog.Content, {
   "& div": {
     position: "relative",
   },
-  
+  "@media (prefers-reduced-motion: no-preference)": {
+    animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+  },
 });
 export const Title = styled(Dialog.Title, {
   width: "180px",
@@ -35,7 +43,5 @@ export const Close = styled(Dialog.Close, {
   background: "#000",
   color: "#fff",
   cursor: "pointer",
-  marginRight:'22px'
+  marginRight: "22px",
 });
-
-  

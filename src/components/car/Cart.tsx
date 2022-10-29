@@ -4,6 +4,8 @@ import { Contend, Title, Close } from "./style";
 import { Section, RemoveItem, ValueCar, Container , CartItem} from "./styleProduto";
 
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../Store/cartSlice";
 
 interface CartItems {
   id: number;
@@ -16,7 +18,13 @@ interface CartItems {
 
 function Cart() {
   const cart = useSelector((state: any) => state.cart);
-  console.log(cart);
+  const dispatch = useDispatch()
+  const handleRemoveItem =(cartItem:any)=> {
+    dispatch(removeFromCart(cartItem))
+    console.log(cartItem);
+    
+   
+  }
 
   return (
     <>
@@ -33,7 +41,7 @@ function Cart() {
             {cart.cartItems?.map(({ id, name, photo, price, cartQuantity }: CartItems) => {
               return (
                 <Section key={id}>
-                  <RemoveItem>x</RemoveItem>
+                  <RemoveItem onClick={() => handleRemoveItem(id)}>x</RemoveItem>
                   <img src={photo} alt="" />
                   <h3>{name}</h3>
                   <div>

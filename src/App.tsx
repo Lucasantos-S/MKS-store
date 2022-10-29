@@ -4,7 +4,7 @@ import Cart from "./components/car/Cart";
 import Header from "./components/Header/Header";
 import CreateProdutcs from "./components/Produtcs/CreateProdutcs";
 import { useGetAllProductsQuery } from "./Store/productsApi";
-import { Section } from "./styles";
+import { Section , Loading} from "./styles";
 
 interface Product {
   id: number;
@@ -23,9 +23,9 @@ function App() {
         <Header />
         <Cart />
       </Dialog.Root>
-      <Section>
+      <Section >
         {isLoading ? (
-          <p>Loading...</p>
+          <Loading>Loading...</Loading>
         ) : error ? (
           <p> ocorreu um erro na pagina</p>
         ) : (

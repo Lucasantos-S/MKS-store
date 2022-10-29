@@ -14,7 +14,7 @@ const initialState: PostStats = {
 };
 export const productsFetch = createAsyncThunk(
   "products/productsFetch",
-  async (id:null, { rejectWithValue }) => {
+  async (idnull, { rejectWithValue }) => {
     
     
     try {

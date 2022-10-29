@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CartItem } from "../components/car/styleProduto";
 
 interface PostStats {
   cartItems: [] | string;
@@ -17,7 +18,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart(state:any, action) {
+    addToCart(state: any, action) {
       const itemIndex = state.cartItems.findIndex(
         (item: any) => item.id === action.payload.id
       );
@@ -29,9 +30,21 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+    removeFromCart(state: any, action) {
+      const nextCartItems = state.cartItems.filter(
+        (cartItem: any) => cartItem.id !== action.payload
+      );
+      const localStorageItem = JSON.parse(storage);
+      const remove = localStorageItem.filter(
+        (item:any) => item.id !== action.payload
+      );
+      localStorage.setItem("cartItems", JSON.stringify(remove));
+
+      state.cartItems = nextCartItems;
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
