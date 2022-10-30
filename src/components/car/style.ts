@@ -26,7 +26,7 @@ export const Contend = styled(Dialog.Content, {
   },
 });
 export const Title = styled(Dialog.Title, {
-  width: "180px",
+  width: "113px",
   margin: "36px 0px 0px 47px",
   fontWeight: "700",
   fontSize: "27px",

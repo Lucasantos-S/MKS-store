@@ -22,7 +22,7 @@ export const CartItem = styled.div`
 export const Section = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: #fff;
   width: 380px;
   height: 95px;
@@ -32,11 +32,11 @@ export const Section = styled.div`
   position: relative;
 
   img {
-    width: 46px;
+    width: 50px;
     height: 57px;
-    margin-right: 21px;
   }
   h3 {
+    text-align: center;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -44,10 +44,37 @@ export const Section = styled.div`
     width: 113px;
   }
   div {
-    width: 50px;
     height: 19px;
     display: flex;
     gap: 5px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    padding: 5px;
+    button {
+      border: 0;
+      background: transparent;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 8px;
+      line-height: 10px;
+      cursor: pointer;
+    }
+    span {
+      border-right: 1px solid #bfbfbf;
+      border-left: 1px solid #bfbfbf;
+      padding: 0 5px;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin-right: 25px;
+    width: 50px;
   }
 `;
 export const RemoveItem = styled.button`
@@ -67,6 +94,23 @@ export const RemoveItem = styled.button`
 `;
 
 export const ValueCar = styled.div`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 15px;
+  color: #fff;
   display: flex;
   justify-content: space-between;
+  margin: 45px 60px;
+`;
+export const Finishing = styled.button`
+  width: 100%;
+  height: 97px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 15px;
+  text-align: center;
+  border: 0;
+  background: #000;
+  color: #fff;
 `;

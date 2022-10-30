@@ -1,9 +1,12 @@
-import React from "react";
+import {useSelector} from "react-redux";
 import { Container, Logo , Button} from "./style";
 import carImg from "../../assets/car.svg";
 import {Trigger } from "@radix-ui/react-dialog";
 
+
+
 function Header() {
+  const {cartTotalQuality} = useSelector(state => state.cart)
   return (
     <Container>
       <Logo>
@@ -12,7 +15,7 @@ function Header() {
       <Trigger >
         <Button>
         <img src={carImg} alt="" />
-        <p>0</p>
+        <p>{cartTotalQuality}</p>
         </Button>
        
       </Trigger>

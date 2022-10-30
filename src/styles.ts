@@ -10,9 +10,19 @@ export const Section = styled.section`
 `;
 
 export const Loading = styled.span`
-  background: #000;
   position: absolute;
   top: 250px;
   left: 45%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px solid #ccc;
+  border-right-color: transparent;
+  animation: loading 1s infinite;
 
+  @keyframes loading {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;

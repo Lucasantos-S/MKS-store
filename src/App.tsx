@@ -25,7 +25,7 @@ function App() {
       </Dialog.Root>
       <Section >
         {isLoading ? (
-          <Loading>Loading...</Loading>
+          <Loading></Loading>
         ) : error ? (
           <p> ocorreu um erro na pagina</p>
         ) : (
