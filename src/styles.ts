@@ -7,6 +7,14 @@ export const Section = styled.section`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 22px;
   position: relative;
+  padding:20px;
+  @media (max-width: 920px) {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
 `;
 
 export const Loading = styled.span`

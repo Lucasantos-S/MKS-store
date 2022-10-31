@@ -21,11 +21,8 @@ export const Logo = styled.h1`
   }
 `;
 export const Button = styled.div`
-  width: 90px;
-  height: 45px;
-  background-color: #fff;
+  width: 100%;
   border-radius: 8px;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
