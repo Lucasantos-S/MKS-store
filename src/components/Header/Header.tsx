@@ -8,7 +8,7 @@ import {Trigger } from "@radix-ui/react-dialog";
 function Header() {
   const {cartTotalQuality} = useSelector(state => state.cart)
   return (
-    <Container>
+    <Container>""
       <Logo>
         MKS <span>Sistemas</span>
       </Logo>
