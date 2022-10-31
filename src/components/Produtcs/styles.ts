@@ -9,8 +9,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   position: relative;
+  @media (max-width: 380px) {
+    width: 100%;
+    margin: 0 40px;
+  }
 
   button {
     position: absolute;
@@ -25,8 +28,9 @@ export const Container = styled.div`
     border-radius: 0px 0px 8px 8px;
     color: #ffffff;
     cursor: pointer;
-    img{
-        margin-right: 17px;
+    
+    img {
+      margin-right: 17px;
     }
   }
 `;
@@ -54,6 +58,7 @@ export const Title = styled.div`
     color: #fff;
     padding: 7px 4px;
     margin-top: 10px;
+    margin-left: 10px;
   }
 `;
 

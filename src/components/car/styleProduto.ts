@@ -17,6 +17,10 @@ export const CartItem = styled.div`
   align-items: center;
   gap: 1.8rem;
   padding-top: 1rem;
+  @media (max-width: 380px) {
+    margin: 28px 20px;
+   
+  }
 `;
 
 export const Section = styled.div`
@@ -30,6 +34,11 @@ export const Section = styled.div`
   box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   position: relative;
+  @media (max-width: 380px) {
+    width: 250px;
+    padding: 20px;
+    gap: 10px;
+  }
 
   img {
     width: 50px;

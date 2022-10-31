@@ -14,6 +14,7 @@ export const Section = styled.section`
     align-items: center;
     justify-content: center;
     padding: 0;
+    margin: 50px auto;
   }
 `;
 

@@ -24,6 +24,12 @@ export const Contend = styled(Dialog.Content, {
   "@media (prefers-reduced-motion: no-preference)": {
     animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   },
+  "@media (max-width: 380px)":{
+    width: "100%",
+  }
+   
+  
+
 });
 export const Title = styled(Dialog.Title, {
   width: "113px",
