@@ -1,5 +1,5 @@
 <h1 align="center">
- MKS Sistemas
+  MKS Sistemas
 </h1>
 
 <p align="center" margin-top="25px" >
@@ -11,14 +11,13 @@
 
 
 <p align="center" margin-top="25px" >
-<a href="https://deploy-teste-enm3zak55-lucasantos-s.vercel.app/" target="_blank">Confira o projeto clicando aqui</a>
+<a href="https://store-nine-puce.vercel.app/" target="_blank">Confira o projeto clicando aqui</a>
 </p>
 
 ## 🏃‍♂️Jornada
 
 Projeto de uma pequena loja usando uma API de produtos.
 
-O foco é no aprendizado da linguagem, mas a principal aplicação e o React-router-DOM, através de manipulações de rotas e requisições via Fetch API.
 
 ## 🧪 Tecnologias
 
