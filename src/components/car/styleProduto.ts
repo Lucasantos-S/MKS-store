@@ -17,7 +17,7 @@ export const CartItem = styled.div`
   align-items: center;
   gap: 1.8rem;
   padding-top: 1rem;
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
     margin: 28px 20px;
    
   }
